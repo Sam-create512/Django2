@@ -1,0 +1,74 @@
+1. instalacia django do pythonu:
+	pip install django
+	pip list
+
+	C:\Users\suteks24>pip list
+	Package  Version
+	-------- -------
+	asgiref  3.11.1
+	Django   6.0.6
+	pip      26.1.2
+	sqlparse 0.5.5
+	tzdata   2026.2
+
+2. vytvorenie projektu:
+	django-admin startproject pokus .
+
+PS C:\Users\suteks24\OneDrive - Stredná priemyselná škola informačných technológií\FS1\PI_3\django1> django-admin startproject pokus .
+
+3. nastavenie slovenciny pre projekt (nazov_projektu/settings.py):
+
+	LANGUAGE_CODE = 'sk'
+
+	TIME_ZONE = 'Europe/Bratislava'
+
+4. spustenie vývojového servera:
+	python.exe .\manage.py runserver
+	bezi na adrese http://127.0.0.1:8000
+
+5. vytvorenie aplikacie:
+	python.exe .\manage.py startapp (nazov_aplikacie)
+
+6. registracia aplikacie do projektu (nazov_projektu/settings.py):
+	INSTALLED_APPS = [
+	    'django.contrib.admin',
+	    'django.contrib.auth',
+	    'django.contrib.contenttypes',
+	    'django.contrib.sessions',
+	    'django.contrib.messages',
+	    'django.contrib.staticfiles',
+ 	    'nazov_aplikacie',
+	]
+7. vytvorenie jednoduchého views (nazov_aplikacie/view.py):
+	from django.shortcuts import render, HttpResponse
+
+	def index(request):
+    		return HttpResponse('Hello World!')
+
+8. vytvorenie urlpattern
+8.1 nazov_projektu/urls.py
+	from django.contrib import admin
+	from django.urls import path, include
+
+	urlpatterns = [
+    	path('admin/', admin.site.urls),
+    	path('skola/', include('nazov_aplikacie.urls')),
+	]
+
+8.2 vytvorenie suboru urls.py v priecinku aplikacie
+	from django.urls import path
+	from . import views
+
+	urlpatterns = [
+		path('', views.index, name='index'),  # vievs,index - index je nazov funkcie vo views.py
+	]
+
+9. Templates
+9.1 vytvorenie Template
+	- vytvorit v priecinku aplikacie priecinok templates/nazov_aplikacie
+	- v tomto priecinku vytvorit htmml subor (napr. index.html)
+9.2 upravit views.py tak aby pouzival templates
+	from django.shortcuts import render
+
+	def index(request):
+		return render(request, 'kalkulacka/index.html')

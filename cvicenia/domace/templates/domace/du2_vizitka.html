@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizitka</title>
+</head>
+<body>
+    <p>Meno: {{ meno }}</p>
+    <p>Trieda: {{ trieda }}</p>
+    <p>Vek: {{ vek }}</p>
+    {% if vek >= 18 %}
+        <p>Som plnoletý.</p>
+    {% else %}
+        <p>Niesom plnoletý.</p>
+    {% endif %}
+    <p>Záľuby:</p>
+    <ol>
+        {% for zaluba in zaluby %}
+            <li>{{ zaluba }}</li>
+        {% endfor %}
+    </ol>
+</body>
+</html>

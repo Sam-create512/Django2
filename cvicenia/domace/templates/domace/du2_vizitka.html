@@ -18,6 +18,8 @@
     <ol>
         {% for zaluba in zaluby %}
             <li>{{ zaluba }}</li>
+        {% empty %}
+            <li>Žiadne záľuby</li>
         {% endfor %}
     </ol>
 </body>

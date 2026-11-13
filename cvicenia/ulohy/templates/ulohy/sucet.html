@@ -1,0 +1,12 @@
+<h1>Sucet dvoch cisel</h1>
+<form method="post">
+    {% csrf_token %}
+    <input type="number" name="cislo1" required>
+    +
+    <input type="number" name="cislo2" required>
+    <button type="submit">Vypočítať</button>
+</form>
+
+{% if vysledok %}
+    <p>Výsledok: {{ vysledok }}</p>
+{% endif %}

@@ -72,3 +72,10 @@ PS C:\Users\suteks24\OneDrive - Stredná priemyselná škola informačných tech
 
 	def index(request):
 		return render(request, 'kalkulacka/index.html')
+
+
+
+<form method="get">
+	<input type="text" name="meno">
+	<button>Odostlat<button>
+</form>

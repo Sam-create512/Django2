@@ -1,0 +1,12 @@
+<h1>Vek</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="rok_narodenia">Rok narodenia:</label>
+    <input type="number" name="rok_narodenia" id="rok_narodenia" required>
+    <br>
+    <button type="submit">Vypočítať</button>
+</form>
+
+{% if vek is not None %}
+    <p>Váš vek je: {{ vek }} rokov.</p>
+{% endif %}

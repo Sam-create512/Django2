@@ -1,0 +1,20 @@
+<h1>Teplota</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="number" name="teplotaIn" required step="any">
+    <select name="jednotka" required>
+        <option value="F">°C -> °F</option>
+        <option value="C">°F -> °C</option>
+    </select>
+    <button type="submit">Prepočítať</button>
+</form>
+
+{% if teplota is not None %}
+    {% if jednotka == "F" %}
+        <p>Teplota je {{ teplota }} °F</p>
+    {% elif jednotka == "C" %}
+        <p>Teplota je {{ teplota }} °C</p>
+
+    {% endif %}
+{% endif %}

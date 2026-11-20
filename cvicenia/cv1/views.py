@@ -24,6 +24,10 @@ def cv1_obchod(request):
 
 def cv1_body(request):
     vysledok = None
+    percenta = None
+    body = None
+    max_bodov = None
+    
     if request.method == "POST":
         body = round(float(request.POST["body"]), 2)
         max_bodov = round(float(request.POST["max"]), 2)
@@ -41,4 +45,4 @@ def cv1_body(request):
                 vysledok = 5
         else:
             vysledok = "Chyba"
-    return render(request, "cv1/cv1_body.html", {"vysledok": vysledok})
+    return render(request, "cv1/cv1_body.html", {"vysledok": vysledok, "percenta": percenta, "body": body, "max_bodov": max_bodov})

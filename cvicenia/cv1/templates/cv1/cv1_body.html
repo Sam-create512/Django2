@@ -9,6 +9,8 @@
     <button type="submit">Vypočítať</button>
 </form>
 
-{% if vysledok is not None %}
-    <p>Výsledok: {{ vysledok }}</p>
+{% if vysledok is not None and vysledok != "Chyba" %}
+    <p>{{ body }} z {{ max_bodov }} bodov = {{ percenta|floatformat:2 }}% -> známka {{ vysledok }}</p>
+{% elif vysledok == "Chyba" %}
+    <p>Chyba: Neplatné vstupné údaje</p>
 {% endif %}

@@ -1,0 +1,14 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="body">Body:</label>
+    <input type="number" step="any" name="body" id="body" required>
+    <br>
+    <label for="max">Max bodov:</label>
+    <input type="number" step="any" name="max" id="max" required>
+    <br>
+    <button type="submit">Vypočítať</button>
+</form>
+
+{% if vysledok is not None %}
+    <p>Výsledok: {{ vysledok }}</p>
+{% endif %}

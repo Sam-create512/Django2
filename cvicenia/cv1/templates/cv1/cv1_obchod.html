@@ -1,0 +1,27 @@
+<form method="get">
+    <label for="max">Max cena:</label>
+    <input type="number" step="any" name="max" id="max">
+    <button type="submit">Odoslať</button>
+</form>
+
+<table border="1">
+    <tr>
+        <th>Produkt</th>
+        <th>Cena</th>
+    </tr>
+    {% for item in data %}
+        {% if item.skryte == False %}
+            <tr>
+                <td>{{ item.nazov }}</td>
+                <td>
+                    {% if item.cena < 5 %}
+                        <strong>{{ item.cena|floatformat:2 }} €</strong>
+                    {% else %}
+                        {{ item.cena|floatformat:2 }} €
+                    {% endif %}
+        
+                </td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>

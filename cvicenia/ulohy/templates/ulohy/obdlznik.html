@@ -1,3 +1,8 @@
+{% extends "ulohy/base.html" %}
+
+{% block titulok %}Obdlznik{% endblock %}
+
+{% block obsah %}
 <h1>Obdlznik</h1>
 <form method="post">
     {% csrf_token %}
@@ -16,3 +21,5 @@
 {% if obvod is not None %}
     <p>Obvod obdlznika: {{ obvod }}</p>
 {% endif %}
+
+{% endblock %}

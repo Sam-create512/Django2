@@ -1,3 +1,8 @@
+{% extends "ulohy/base.html" %}
+
+{% block titulok %}Rozvrh{% endblock %}
+
+{% block obsah %}
 <h1>{{ den }}</h1>
 <table border="1">
     <tr><th>Hodina</th><th>Predmet</th></tr>
@@ -14,3 +19,5 @@
     
     
 </table>
+
+{% endblock %}

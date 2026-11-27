@@ -1,3 +1,8 @@
+{% extends "ulohy/base.html" %}
+
+{% block titulok %}Sucet{% endblock %}
+
+{% block obsah %}
 <h1>Sucet dvoch cisel</h1>
 <form method="post">
     {% csrf_token %}
@@ -10,3 +15,4 @@
 {% if vysledok %}
     <p>Výsledok: {{ vysledok }}</p>
 {% endif %}
+{% endblock %}

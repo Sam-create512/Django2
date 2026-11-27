@@ -73,3 +73,7 @@ def vek(request):
         dnes = datetime.date.today()
         vek = dnes.year - rok_narodenia
     return render(request, "ulohy/vek.html", {"vek": vek})
+
+def index(request):
+    return render(request, "ulohy/index.html")
+

@@ -1,0 +1,39 @@
+{% load static %}
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titulok %}Cvičenia{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="{% static 'ulohy/style.css' %}" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark mb-4" data-bs-theme="dark">
+    <div class="container" >
+      <a class="navbar-brand" href="{% url 'index' %}">
+        <img src="{% static 'ulohy/img/logo.png' %}" alt="" width="30" height="30" class="d-inline-block align-text-top">
+        Cvičenia
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Zobraziť menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <div class="navbar-nav">
+          <a class="nav-link" href="{% url 'pozdrav' %}">Pozdrav</a>
+          <a class="nav-link" href="{% url 'sucet' %}"><i class="bi bi-plus-slash-minus"></i> Súčet</a>
+          <a class="nav-link" href="{% url 'obdlznik' %}">Obdĺžnik</a>
+          <a class="nav-link" href="{% url 'kalkulacka'%}">Kalkulacka</a>
+          <a class="nav-link" href="{% url 'vek'%}">Vek</a>
+          <a class="nav-link" href="{% url 'rozvrh' %}">Rozvrh</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    {% block obsah %}{% endblock %}
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
+</body>
+</html>

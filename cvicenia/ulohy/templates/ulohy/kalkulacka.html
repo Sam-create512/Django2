@@ -1,3 +1,8 @@
+{% extends "ulohy/base.html" %}
+
+{% block titulok %}Kalkulacka{% endblock %}
+
+{% block obsah %}
 <h1>Kalkulacka</h1>
 <form method="post">
     {% csrf_token %}
@@ -15,3 +20,4 @@
 {% if vysledok is not None %}
     <p>Výsledok: {{ vysledok }}</p>
 {% endif %}
+{% endblock %}
